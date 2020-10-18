@@ -13,6 +13,7 @@
 		B07B39B325321209006AAD8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B07B39B125321209006AAD8F /* Main.storyboard */; };
 		B07B39B52532120F006AAD8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B07B39B42532120F006AAD8F /* Assets.xcassets */; };
 		B07B39B82532120F006AAD8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B07B39B62532120F006AAD8F /* LaunchScreen.storyboard */; };
+		B0E86AC6253C8E9400C391A8 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E86AC5253C8E9400C391A8 /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B07B39B42532120F006AAD8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B07B39B72532120F006AAD8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B07B39B92532120F006AAD8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0E86AC5253C8E9400C391A8 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				B07B39B42532120F006AAD8F /* Assets.xcassets */,
 				B07B39B62532120F006AAD8F /* LaunchScreen.storyboard */,
 				B07B39B92532120F006AAD8F /* Info.plist */,
+				B0E86AC5253C8E9400C391A8 /* Common.swift */,
 			);
 			path = WeatherJapan;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0E86AC6253C8E9400C391A8 /* Common.swift in Sources */,
 				B07B39B025321209006AAD8F /* ViewController.swift in Sources */,
 				B07B39AC25321209006AAD8F /* AppDelegate.swift in Sources */,
 				B07B39AE25321209006AAD8F /* SceneDelegate.swift in Sources */,
