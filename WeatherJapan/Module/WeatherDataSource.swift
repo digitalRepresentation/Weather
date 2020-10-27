@@ -15,7 +15,7 @@ class WeatherDataSource {
     var summary: WeatherSummary?
     var forecastList = [Any]()
     
-    func fetchSummary(q: String, completion: @escaping() -> ()) {
+    func fetchSummary(q:String, completion: @escaping() -> ()) {
         let apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=\(q)&appid=\(appKey)&lang=ja&units=metric"
 
         let url = URL(string: apiUrl)!
@@ -55,7 +55,6 @@ class WeatherDataSource {
                 
                 let decoder = JSONDecoder()
                 self.summary = try decoder.decode(WeatherSummary.self, from: data)
-                
                 
                 
             } catch {

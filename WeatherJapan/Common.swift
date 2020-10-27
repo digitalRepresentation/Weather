@@ -8,4 +8,4 @@
 
 import Foundation
 
-let appKey = "f93762fb49b4075bd2844d989ef0f56";
+let appKey = "af93762fb49b4075bd2844d989ef0f56";

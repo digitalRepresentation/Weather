@@ -16,7 +16,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        WeatherDataSource.shared.fetchSummary(q:"Tokyo"){
+            [weak self]
+            in
+            self?.listTableView.reloadData()
+        }
+        
     }
 
 
@@ -38,7 +44,18 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: SummaryTableViewCell.identifier, for: indexPath) as! SummaryTableViewCell
-        //
+        
+            if let data = WeatherDataSource.shared.summary?.weather.first {
+                cell.weatherImageView.image = UIImage(named: data.icon)
+                cell.statusLabel.text = data.description
+            }
+            
+            if let data = WeatherDataSource.shared.summary?.main {
+                cell.minMaxLabel.text = "最高　\(data.temp_max)° 最低　\(data.temp_min)°"
+                cell.currentTemperatureLabel.text = "\(data.temp)°"
+            }
+            
+            
         return cell
         }
         
