@@ -29,6 +29,7 @@
 		B07B39B92532120F006AAD8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0BA546425481181007783BA /* SummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTableViewCell.swift; sourceTree = "<group>"; };
 		B0BA54662548119C007783BA /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
+		B0BA5469254817E0007783BA /* SummaryApi.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SummaryApi.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B0E86AC5253C8E9400C391A8 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,6 +63,7 @@
 		B07B39AA25321209006AAD8F /* WeatherJapan */ = {
 			isa = PBXGroup;
 			children = (
+				B0BA5468254817B9007783BA /* API */,
 				B0BA546325481128007783BA /* Cell */,
 				B07B39AB25321209006AAD8F /* AppDelegate.swift */,
 				B07B39AD25321209006AAD8F /* SceneDelegate.swift */,
@@ -82,6 +84,14 @@
 				B0BA54662548119C007783BA /* ForecastTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		B0BA5468254817B9007783BA /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B0BA5469254817E0007783BA /* SummaryApi.playground */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
