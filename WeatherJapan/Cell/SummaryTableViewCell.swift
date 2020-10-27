@@ -10,7 +10,7 @@ import UIKit
 
 class SummaryTableViewCell: UITableViewCell {
 
-    static let indentifier = "SummaryTableViewCell"
+    static let identifier = "SummaryTableViewCell"
     
     
     @IBOutlet weak var weatherImageView: UIImageView!
