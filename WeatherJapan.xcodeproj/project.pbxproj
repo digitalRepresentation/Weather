@@ -36,6 +36,7 @@
 		B0BA546B25482334007783BA /* WeatherSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherSummary.swift; sourceTree = "<group>"; };
 		B0BA546D25482369007783BA /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		B0BA546F2548237D007783BA /* WeatherDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataSource.swift; sourceTree = "<group>"; };
+		B0BA5471254834CC007783BA /* ForecastApi.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ForecastApi.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B0E86AC5253C8E9400C391A8 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				B0BA5469254817E0007783BA /* SummaryApi.playground */,
+				B0BA5471254834CC007783BA /* ForecastApi.playground */,
 			);
 			path = API;
 			sourceTree = "<group>";
