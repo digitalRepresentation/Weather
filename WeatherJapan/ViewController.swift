@@ -36,6 +36,24 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    var topInset: CGFloat = 0.0
+    
+    //View配置が完了できたら呼び出す。
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        if topInset == 0.0 {
+            let first = IndexPath(row: 0, section: 0)
+            if let cell = listTableView.cellForRow(at: first) {
+                topInset = listTableView.frame.height - cell.frame.height
+                
+                var inset = listTableView.contentInset
+                inset.top = topInset
+                listTableView.contentInset = inset
+            }
+        }
+    }
 
 
 }
