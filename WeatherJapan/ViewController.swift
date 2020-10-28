@@ -23,6 +23,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        listTableView.backgroundColor = UIColor.clear
+        listTableView.separatorStyle = .none
+        listTableView.showsVerticalScrollIndicator = false
+        
         WeatherDataSource.shared.fetchSummary(q:"Tokyo"){
             [weak self]
             in
@@ -38,16 +42,16 @@ class ViewController: UIViewController {
     }
     
     var topInset: CGFloat = 0.0
-    
+
     //View配置が完了できたら呼び出す。
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
+
         if topInset == 0.0 {
             let first = IndexPath(row: 0, section: 0)
             if let cell = listTableView.cellForRow(at: first) {
                 topInset = listTableView.frame.height - cell.frame.height
-                
+
                 var inset = listTableView.contentInset
                 inset.top = topInset
                 listTableView.contentInset = inset
@@ -65,7 +69,8 @@ extension ViewController: UITableViewDataSource {
         case 0:
             return 1
         case 1:
-            return WeatherDataSource.shared.forecast?.list.count ?? 0
+            return 10
+            // WeatherDataSource.shared.forecast?.list.count ?? 0
         default:
             return 0
         }
