@@ -10,6 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // 日本語で日付
+    let dateFormatter: DateFormatter = {
+        let f = DateFormatter()
+        f.locale = Locale(identifier: "ja_JP")
+        return f
+    }()
     
     @IBOutlet weak var listTableView: UITableView!
     
@@ -18,6 +24,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         WeatherDataSource.shared.fetchSummary(q:"Tokyo"){
+            [weak self]
+            in
+            self?.listTableView.reloadData()
+        }
+        
+        WeatherDataSource.shared.fetchForecast(q:"Tokyo"){
             [weak self]
             in
             self?.listTableView.reloadData()
@@ -35,7 +47,7 @@ extension ViewController: UITableViewDataSource {
         case 0:
             return 1
         case 1:
-            return 0
+            return WeatherDataSource.shared.forecast?.list.count ?? 0
         default:
             return 0
         }
@@ -61,6 +73,23 @@ extension ViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: ForecastTableViewCell.identifier, for: indexPath) as! ForecastTableViewCell
         
+            
+        let target = WeatherDataSource.shared.forecast?.list[indexPath.row] ?? nil
+                //WeatherDataSource.shared.forecastList[indexPath.row]
+            //forecast?.list[indexPath.row]
+            
+            dateFormatter.dateFormat = "M.d (E)"
+            cell.dateLabel.text = dateFormatter.string(for: target?.dt_txt)
+
+            dateFormatter.dateFormat = "HH:00"
+            cell.timeLabel.text = dateFormatter.string(for: target?.dt_txt)
+
+            cell.weatherImageView.image = UIImage(named: target?.weather.first!.icon ?? "0")
+
+            cell.statusLabel.text = target?.weather.first?.description
+
+            cell.temperatureLabel.text = "\(target?.main.temp ?? 00)°"
+
         return cell
         
     }

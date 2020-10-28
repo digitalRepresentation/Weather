@@ -11,6 +11,7 @@ struct Forecast: Codable {
         }
         let main: Main
         let weather: [Weather]
+        let dt_txt: String
     }
     let list: [List]
 }
@@ -48,10 +49,12 @@ let task = session.dataTask(with: url) { (data, response, error) in
         let decoder = JSONDecoder()
         let forecast = try decoder.decode(Forecast.self, from: data)
         
-        forecast.list[9].main.temp
+        forecast.list
         forecast.list.index(after: 2)
         forecast.list.index(after: 3)
         forecast.list.index(after: 4)
+        forecast.list[0].weather.first?.icon
+        forecast.list[1].main.temp
         
     } catch {
         print (error)
