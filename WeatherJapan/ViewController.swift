@@ -2,13 +2,20 @@
 //  ViewController.swift
 //  WeatherJapan
 //
-//  Created by 金宝ヨン on 2020/10/11.
+//  Created by 金宝 on 2020/10/11.
 //  Copyright © 2020 kimjinyoung. All rights reserved.
 //
 
 import UIKit
+import CoreLocation
 
 class ViewController: UIViewController {
+    
+    lazy var locationManager: CLLocationManager = {
+       let m = CLLocationManager()
+        m.delegate = self
+        return m
+    }()
 
     // 日本語で日付
     let dateFormatter: DateFormatter = {
@@ -19,6 +26,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var listTableView: UITableView!
     
+    @IBOutlet weak var locationLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +45,29 @@ class ViewController: UIViewController {
             [weak self]
             in
             self?.listTableView.reloadData()
+        }
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        locationLabel.text = "アップデート中。。。"
+        
+        if CLLocationManager.locationServicesEnabled() {
+            switch CLLocationManager.authorizationStatus() {
+            //初期表示か許可を貰わない場合
+            case .notDetermined:
+                locationManager.requestWhenInUseAuthorization()
+            case .authorizedAlways, .authorizedWhenInUse:
+                updateCurrentLocation()
+            case .denied, .restricted:
+                show(message: "位置サービスが活性になってないです。")
+            @unknown default:
+                fatalError()
+            }
+        } else {
+            show(message: "位置サービスが活性になってないです。")
         }
         
     }
@@ -61,6 +92,32 @@ class ViewController: UIViewController {
 
 
 }
+
+extension ViewController: CLLocationManagerDelegate {
+    func updateCurrentLocation() {
+        locationManager.startUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations location: [CLLocation]) {
+        manager.stopUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        show(message: error.localizedDescription)
+        manager.stopUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            updateCurrentLocation()
+        default:
+            break
+        }
+    }
+}
+
+
 //現在時間、３時間ごとの二つセッションを表示する。
 //※基本的にはViewControllは１個の画面を表示する。
 extension ViewController: UITableViewDataSource {

@@ -18,6 +18,7 @@
 		B0BA546C25482334007783BA /* WeatherSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BA546B25482334007783BA /* WeatherSummary.swift */; };
 		B0BA546E25482369007783BA /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BA546D25482369007783BA /* Forecast.swift */; };
 		B0BA54702548237D007783BA /* WeatherDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BA546F2548237D007783BA /* WeatherDataSource.swift */; };
+		B0D0250D254FCBC400562E51 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0250C254FCBC400562E51 /* UIViewController+Alert.swift */; };
 		B0E86AC6253C8E9400C391A8 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E86AC5253C8E9400C391A8 /* Common.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		B0BA546D25482369007783BA /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		B0BA546F2548237D007783BA /* WeatherDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataSource.swift; sourceTree = "<group>"; };
 		B0BA5471254834CC007783BA /* ForecastApi.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ForecastApi.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B0D0250C254FCBC400562E51 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		B0E86AC5253C8E9400C391A8 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +72,7 @@
 		B07B39AA25321209006AAD8F /* WeatherJapan */ = {
 			isa = PBXGroup;
 			children = (
+				B0D0250B254FCB7700562E51 /* Extension */,
 				B0BA546A25482320007783BA /* Module */,
 				B0BA5468254817B9007783BA /* API */,
 				B0BA546325481128007783BA /* Cell */,
@@ -111,6 +114,14 @@
 				B0BA546F2548237D007783BA /* WeatherDataSource.swift */,
 			);
 			path = Module;
+			sourceTree = "<group>";
+		};
+		B0D0250B254FCB7700562E51 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B0D0250C254FCBC400562E51 /* UIViewController+Alert.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +200,7 @@
 				B0BA54702548237D007783BA /* WeatherDataSource.swift in Sources */,
 				B0E86AC6253C8E9400C391A8 /* Common.swift in Sources */,
 				B0BA546C25482334007783BA /* WeatherSummary.swift in Sources */,
+				B0D0250D254FCBC400562E51 /* UIViewController+Alert.swift in Sources */,
 				B07B39B025321209006AAD8F /* ViewController.swift in Sources */,
 				B07B39AC25321209006AAD8F /* AppDelegate.swift in Sources */,
 				B0BA546525481181007783BA /* SummaryTableViewCell.swift in Sources */,
