@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var listTableView: UITableView!
     
+    //一番上位のラベル
     @IBOutlet weak var locationLabel: UILabel!
     
     override func viewDidLoad() {
@@ -46,7 +47,6 @@ class ViewController: UIViewController {
             in
             self?.listTableView.reloadData()
         }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
         
         if CLLocationManager.locationServicesEnabled() {
             switch CLLocationManager.authorizationStatus() {
-            //初期表示か許可を貰わない場合
+            //初期表示か許可をもらわない場合
             case .notDetermined:
                 locationManager.requestWhenInUseAuthorization()
             case .authorizedAlways, .authorizedWhenInUse:
